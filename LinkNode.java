@@ -25,8 +25,21 @@ public class LinkNode {
             System.out.print(curr.data + "  ");
             curr = curr.next;
         }
+
         System.out.println("");
+        System.out.println("");
+        System.out.println("反转后");
         LinkNode l = reversion(e);
+        curr = l;
+        while (curr != null) {
+            System.out.print(curr.data + "  ");
+            curr = curr.next;
+        }
+
+        System.out.println("");
+        System.out.println("");
+        System.out.println("再次反转后");
+        l = reversion2(l);
         curr = l;
         while (curr != null) {
             System.out.print(curr.data + "  ");
@@ -50,4 +63,13 @@ public class LinkNode {
         return pre;
     }
 
+    public static LinkNode reversion2(LinkNode current) {
+        if (current == null || current.next == null) {
+            return current;
+        }
+        LinkNode last = reversion2(current.next);
+        current.next.next = current;
+        current.next = null;
+        return last;
+    }
 }
