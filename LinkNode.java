@@ -68,7 +68,7 @@ public class LinkNode {
             return current;
         }
         LinkNode last = reversion2(current.next);
-        current.next.next = current;
+        last.next = current;
         current.next = null;
         return last;
     }
