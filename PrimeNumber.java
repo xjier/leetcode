@@ -4,7 +4,7 @@
 public class PrimeNumber {
     public static void main(String[] args) {
 
-        System.out.println(eratosthenes(100));
+        System.out.println(eratosthenes(10));
     }
 
     private static int eratosthenes(int n) {
@@ -19,7 +19,9 @@ public class PrimeNumber {
                 }
             }
         }
-
+        for (int i = 0; i < n; i++) {
+            System.out.print(isPrime[i]+ " ");
+        }
         return count;
     }
 
